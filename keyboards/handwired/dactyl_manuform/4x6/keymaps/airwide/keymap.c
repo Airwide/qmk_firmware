@@ -1,5 +1,5 @@
 #include QMK_KEYBOARD_H
-
+#include "g/keymap_combo.h"
 
 enum unicode_names {
   SE_AA_HIGH,

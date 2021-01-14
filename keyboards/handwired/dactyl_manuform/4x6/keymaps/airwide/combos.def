@@ -1,0 +1,2 @@
+SUBS(helloWorld, "QMK is pretty rad eh?", KC_H, KC_J)
+COMB(klQuot, KC_QUOT, KC_K, KC_L)
