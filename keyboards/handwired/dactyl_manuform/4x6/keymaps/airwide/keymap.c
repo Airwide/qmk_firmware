@@ -29,33 +29,41 @@ const uint32_t PROGMEM unicode_map[] = {
 #define KC_RESET RESET
 #define KC_UC_MOD UC_MOD
 #define KC_CTL_ESC MT(MOD_LCTL, KC_ESC)
+#define KC_CTL_Z MT(MOD_LCTL, KC_Z)
+#define KC_SFT_A MT(MOD_LSFT, KC_A)
 #define KC_CTL_BSPC MT(MOD_RCTL, KC_BSPC)
+#define KC_CTL_SLA MT(MOD_RCTL, KC_SLSH)
+#define KC_SFT_SCN MT(MOD_RSFT, KC_SCLN)
 #define KC_L2_ENT LT(2, KC_ENT)
 #define KC_L1_DEL LT(1, KC_DEL)
+#define KC_L1_ESC LT(1, KC_ESC)
 #define KC_L1_TAB LT(1, KC_TAB)
 #define KC_L3_SPC LT(3, KC_SPC)
+#define KC_L1_BSPC LT(1, KC_BSPC)
 #define KC_GUI_LBRC MT(MOD_LGUI,KC_LBRC)
+#define KC_GUI_DEL MT(MOD_LGUI,KC_DEL)
 #define KC_GUI_RBRC MT(MOD_RGUI,KC_RBRC)
+#define KC_GUI_TAB MT(MOD_RGUI,KC_TAB)
 
 #define KC_CMB_TOG CMB_TOG  // A hack to allow KC_-less keycode along with KC_-ful ones
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[0] = LAYOUT_kc( 
 //       ┌───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┐
-            XXX  ,   Q   ,   W   ,   E   ,   R   ,   T   ,                           Y   ,   U   ,   I   ,   O   ,   P   , LBRC  ,
+            XXX  ,   Q   ,   W   ,   E   ,   R   ,   T   ,                           Y   ,   U   ,   I   ,   O   ,   P   ,  XXX  ,
 //       ├───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
-            GRV  ,   A   ,   S   ,   D   ,   F   ,   G   ,                           H   ,   J   ,   K   ,   L   , SCLN  , QUOT  ,
+            XXX  , SFT_A ,   S   ,   D   ,   F   ,   G   ,                           H   ,   J   ,   K   ,   L   ,SFT_SCN,  XXX  ,
 //       ├───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
-           LSPO  ,   Z   ,   X   ,   C   ,   V   ,   B   ,                           N   ,   M   , COMM  ,  DOT  , SLSH  , RSPC  ,
+            XXX  , CTL_Z ,   X   ,   C   ,   V   ,   B   ,                           N   ,   M   , COMM  ,  DOT  ,CTL_SLA,  XXX  ,
 //       └───────┴───────┼───────┼───────┼───────┴───────┴───────┴───────┴───────┴───────┴───────┼───────┼───────┼───────┴───────┘
-                           LBRC  , RBRC  ,                                                         MINS  ,  EQL  ,
+                            XXX  ,  XXX  ,                                                          XXX  ,  XXX  ,
 //                       └───────┴───────┘                                                       └───────┴───────┘
 //                                       ┌───────┬───────┐                       ┌───────┬───────┐
-                                          CTL_ESC,                                       CTL_BSPC,
+                                           L1_ESC,                                        L1_BSPC,
 //                                       ├───────┼───────┤                       ├───────┼───────┤
-                                           L2_ENT, L1_DEL,                         L1_TAB, L3_SPC,
+                                           L2_ENT,GUI_DEL,                        GUI_TAB, L3_SPC,
 //                                       ├───────┼───────┤                       ├───────┼───────┤
-                                            LALT ,GUI_LBRC,                      GUI_RBRC, RALT ),
+                                            NO   ,  NO   ,                          NO   ,  NO  ),
 //                                       └───────┴───────┘                       └───────┴───────┘
 	[1] = LAYOUT_kc(
 //        ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
