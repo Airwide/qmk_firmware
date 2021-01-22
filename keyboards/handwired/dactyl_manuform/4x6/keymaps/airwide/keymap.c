@@ -36,12 +36,12 @@ const uint32_t PROGMEM unicode_map[] = {
 //#define KC_CTL_BSPC MT(MOD_RCTL, KC_BSPC)
 #define KC_CTL_SLA MT(MOD_RCTL, KC_SLSH)
 #define KC_SFT_SCN MT(MOD_RSFT, KC_SCLN)
-#define KC_L2_ENT LT(2, KC_ENT)
+#define KC_L1_ENT LT(1, KC_ENT)
 //#define KC_L1_DEL LT(1, KC_DEL)
 #define KC_L1_ESC LT(1, KC_ESC)
 //#define KC_L1_TAB LT(1, KC_TAB)
 #define KC_L3_SPC LT(3, KC_SPC)
-#define KC_L1_BSPC LT(1, KC_BSPC)
+#define KC_L2_BSPC LT(2, KC_BSPC)
 #define KC_GUI_LBRC MT(MOD_LGUI,KC_LBRC)
 #define KC_GUI_DEL MT(MOD_LGUI,KC_DEL)
 #define KC_GUI_RBRC MT(MOD_RGUI,KC_RBRC)
@@ -61,9 +61,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                             XXX  ,  XXX  ,                                                          XXX  ,  XXX  ,
 //                       └───────┴───────┘                                                       └───────┴───────┘
 //                                       ┌───────┬───────┐                       ┌───────┬───────┐
-                                           L1_ESC,                                        L1_BSPC,
+                                           L1_ESC,                                         L1_ENT,
 //                                       ├───────┼───────┤                       ├───────┼───────┤
-                                           L2_ENT,GUI_DEL,                        GUI_TAB, L3_SPC,
+                                          L2_BSPC,GUI_DEL,                        GUI_TAB, L3_SPC,
 //                                       ├───────┼───────┤                       ├───────┼───────┤
                                             NO   ,  NO   ,                          NO   ,  NO  ),
 //                                       └───────┴───────┘                       └───────┴───────┘
