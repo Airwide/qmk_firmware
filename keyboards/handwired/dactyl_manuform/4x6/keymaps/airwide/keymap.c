@@ -27,32 +27,23 @@ const uint32_t PROGMEM unicode_map[] = {
 #define KC____ KC_TRNS
 #define KC_XXX KC_NO
 #define KC_RESET RESET
-#define KC_UC_MOD UC_MOD
-//#define KC_CTL_ESC MT(MOD_LCTL, KC_ESC)
 #define KC_CTL_Z MT(MOD_LCTL, KC_Z)
 #define KC_SFT_A MT(MOD_LSFT, KC_A)
 #define KC_ALT_X MT(MOD_LALT, KC_X)
 #define KC_ALT_DOT MT(MOD_RALT, KC_DOT)
-//#define KC_CTL_BSPC MT(MOD_RCTL, KC_BSPC)
 #define KC_CTL_SLA MT(MOD_RCTL, KC_SLSH)
 #define KC_SFT_SCN MT(MOD_RSFT, KC_SCLN)
-//#define KC_L1_ENT LT(1, KC_ENT)
 #define KC_L2_ENT LT(2, KC_ENT)
-//#define KC_L1_DEL LT(1, KC_DEL)
 #define KC_L1_ESC LT(1, KC_ESC)
-//#define KC_L1_TAB LT(1, KC_TAB)
 #define KC_L3_SPC LT(3, KC_SPC)
-//#define KC_L2_BSPC LT(2, KC_BSPC)
 #define KC_L1_BSPC LT(1, KC_BSPC)
-#define KC_GUI_LBRC MT(MOD_LGUI,KC_LBRC)
 #define KC_GUI_DEL MT(MOD_LGUI,KC_DEL)
-#define KC_GUI_RBRC MT(MOD_RGUI,KC_RBRC)
 #define KC_GUI_TAB MT(MOD_RGUI,KC_TAB)
 
 #define KC_CMB_TOG CMB_TOG  // A hack to allow KC_-less keycode along with KC_-ful ones
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-	[0] = LAYOUT_kc( 
+	[0] = LAYOUT_kc(
 //       ┌───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┐
             XXX  ,   Q   ,   W   ,   E   ,   R   ,   T   ,                           Y   ,   U   ,   I   ,   O   ,   P   ,  XXX  ,
 //       ├───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
@@ -69,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                                       ├───────┼───────┤                       ├───────┼───────┤
                                             NO   ,  NO   ,                          NO   ,  NO  ),
 //                                       └───────┴───────┘                       └───────┴───────┘
-	[1] = LAYOUT_kc( \
+	[1] = LAYOUT_kc(
 //       ┌───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┐
             ___  ,   1   ,   2   ,   3   ,   4   ,   5   ,                           6   ,   7   ,   8   ,   9   ,   0   ,  ___  ,
 //       ├───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
@@ -86,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                                       ├───────┼───────┤                       ├───────┼───────┤
                                             ___  ,  ___  ,                          ___  ,  ___ ),
 //                                       └───────┴───────┘                       └───────┴───────┘
-	[2] = LAYOUT_kc( \
+	[2] = LAYOUT_kc(
 //       ┌───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┐
             ___  , PSCR  , SLCK  , NLCK  , CAPS  , PAUS  ,                         ASTR  ,   7   ,   8   ,   9   , MINS  ,  ___  ,
 //       ├───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
@@ -103,9 +94,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                                       ├───────┼───────┤                       ├───────┼───────┤
                                             ___  ,  ___  ,                          ___  ,  ___ ),
 //                                       └───────┴───────┘                       └───────┴───────┘
-	[3] = LAYOUT_kc( \
+	[3] = LAYOUT_kc(
 //       ┌───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┐
-            ___  ,  ___  ,  ___  , RESET , BRMU  , _VOLUP,                         HOME  , PGDN  , PGUP  ,  END  , BTN3  ,  ___  ,
+            ___  , RESET ,  ___  ,  ___  , BRMU  , _VOLUP,                         HOME  , PGDN  , PGUP  ,  END  , BTN3  ,  ___  ,
 //       ├───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
             ___  ,  ___  ,  ___  ,  ___  , BRMD  ,_VOLDOWN,                        LEFT  , DOWN  ,  UP   , RIGHT , BTN2  ,  ___  ,
 //       ├───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
@@ -118,10 +109,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                                       ├───────┼───────┤                       ├───────┼───────┤
                                             ___  ,  ___  ,                          ___  ,  ___  ,
 //                                       ├───────┼───────┤                       ├───────┼───────┤
-                                            ___  ,  ___  ,                          ___  ,  ___ ) 
+                                            ___  ,  ___  ,                          ___  ,  ___ )
 //                                       └───────┴───────┘                       └───────┴───────┘
 /* Layer template
-	[4] = LAYOUT_kc( \
+	[4] = LAYOUT_kc(
 //       ┌───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┐
             ___  ,  ___  ,  ___  ,  ___  ,  ___  ,  ___  ,                          ___  ,  ___  ,  ___  ,  ___  ,  ___  ,  ___  ,
 //       ├───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
