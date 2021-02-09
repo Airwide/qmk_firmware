@@ -2,27 +2,11 @@
 #include "4x6.h"
 #include "g/keymap_combo.h"
 
-enum unicode_names {
-  SE_AA_HIGH,
-  SE_AE_HIGH,
-  SE_OE_HIGH,
-  SE_AA_LOW,
-  SE_AE_LOW,
-  SE_OE_LOW,
-};
-
-const uint32_t PROGMEM unicode_map[] = {
-  [SE_AA_HIGH] = 0x00C5,
-  [SE_AE_HIGH] = 0x00C4,
-  [SE_OE_HIGH] = 0x00D6,
-  [SE_AA_LOW]  = 0x00E5,
-  [SE_AE_LOW]  = 0x00E4,
-  [SE_OE_LOW]  = 0x00F6,
-};
-
-#define SE_AA XP(SE_AA_LOW, SE_AA_HIGH)
-#define SE_AE XP(SE_AE_LOW, SE_AE_HIGH)
-#define SE_OE XP(SE_OE_LOW, SE_OE_HIGH)
+#define _QWERTY 0
+#define _COLEMAK 1
+#define _SYMBOL 2
+#define _NUMBER 3
+#define _NAVIGATION 4
 
 #define KC____ KC_TRNS
 #define KC_XXX KC_NO
@@ -33,17 +17,18 @@ const uint32_t PROGMEM unicode_map[] = {
 #define KC_ALT_DOT MT(MOD_RALT, KC_DOT)
 #define KC_CTL_SLA MT(MOD_RCTL, KC_SLSH)
 #define KC_SFT_SCN MT(MOD_RSFT, KC_SCLN)
-#define KC_L2_ENT LT(2, KC_ENT)
-#define KC_L1_ESC LT(1, KC_ESC)
-#define KC_L3_SPC LT(3, KC_SPC)
-#define KC_L1_BSPC LT(1, KC_BSPC)
+#define KC_SFT_O MT(MOD_RSFT, KC_O)
+#define KC_NUM_ENT LT(_NUMBER, KC_ENT)
+#define KC_SYM_ESC LT(_SYMBOL, KC_ESC)
+#define KC_NAV_SPC LT(_NAVIGATION, KC_SPC)
+#define KC_SYM_BSP LT(_SYMBOL, KC_BSPC)
 #define KC_GUI_DEL MT(MOD_LGUI,KC_DEL)
 #define KC_GUI_TAB MT(MOD_RGUI,KC_TAB)
-
-#define KC_CMB_TOG CMB_TOG  // A hack to allow KC_-less keycode along with KC_-ful ones
+#define KC_COLEMAK DF(_COLEMAK)
+#define KC_QWERTY DF(_QWERTY)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-	[0] = LAYOUT_kc(
+	[_QWERTY] = LAYOUT_kc(
 //       ┌───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┐
             XXX  ,   Q   ,   W   ,   E   ,   R   ,   T   ,                           Y   ,   U   ,   I   ,   O   ,   P   ,  XXX  ,
 //       ├───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
@@ -54,13 +39,30 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                             XXX  ,  XXX  ,                                                          XXX  ,  XXX  ,
 //                       └───────┴───────┘                                                       └───────┴───────┘
 //                                       ┌───────┬───────┐                       ┌───────┬───────┐
-                                           L1_ESC,                                        L1_BSPC,
+                                          SYM_ESC,                                        SYM_BSP,
 //                                       ├───────┼───────┤                       ├───────┼───────┤
-                                          L2_ENT ,GUI_DEL,                        GUI_TAB, L3_SPC,
+                                          NUM_ENT,GUI_DEL,                        GUI_TAB,NAV_SPC,
 //                                       ├───────┼───────┤                       ├───────┼───────┤
                                             NO   ,  NO   ,                          NO   ,  NO  ),
 //                                       └───────┴───────┘                       └───────┴───────┘
-	[1] = LAYOUT_kc(
+	[_COLEMAK] = LAYOUT_kc(
+//       ┌───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+            ___  ,   Q   ,   W   ,   F   ,   P   ,   B   ,                           J   ,   L   ,   U   ,   Y   ,  SCLN ,  ___  ,
+//       ├───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
+            ___  , SFT_A ,   R   ,   S   ,   T   ,   G   ,                           M   ,   N   ,   E   ,   I   , SFT_O ,  ___  ,
+//       ├───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
+            ___  , CTL_Z , ALT_X ,   C   ,   D   ,   V   ,                           K   ,   H   ,  COMM ,ALT_DOT,CTL_SLA,  ___  ,
+//       └───────┴───────┼───────┼───────┼───────┴───────┴───────┴───────┴───────┴───────┴───────┼───────┼───────┼───────┴───────┘
+                            ___  ,  ___  ,                                                          ___  ,  ___  ,
+//                       └───────┴───────┘                                                       └───────┴───────┘
+//                                       ┌───────┬───────┐                       ┌───────┬───────┐
+                                            ___  ,                                          ___  ,
+//                                       ├───────┼───────┤                       ├───────┼───────┤
+                                            ___  ,  ___  ,                          ___  ,  ___  ,
+//                                       ├───────┼───────┤                       ├───────┼───────┤
+                                            ___  ,  ___  ,                          ___  ,  ___ ),
+//                                       └───────┴───────┘                       └───────┴───────┘
+	[_SYMBOL] = LAYOUT_kc(
 //       ┌───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┐
             ___  ,   1   ,   2   ,   3   ,   4   ,   5   ,                           6   ,   7   ,   8   ,   9   ,   0   ,  ___  ,
 //       ├───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
@@ -77,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                                       ├───────┼───────┤                       ├───────┼───────┤
                                             ___  ,  ___  ,                          ___  ,  ___ ),
 //                                       └───────┴───────┘                       └───────┴───────┘
-	[2] = LAYOUT_kc(
+	[_NUMBER] = LAYOUT_kc(
 //       ┌───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┐
             ___  , PSCR  , SLCK  , NLCK  , CAPS  , PAUS  ,                         ASTR  ,   7   ,   8   ,   9   , MINS  ,  ___  ,
 //       ├───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
@@ -94,13 +96,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                                       ├───────┼───────┤                       ├───────┼───────┤
                                             ___  ,  ___  ,                          ___  ,  ___ ),
 //                                       └───────┴───────┘                       └───────┴───────┘
-	[3] = LAYOUT_kc(
+	[_NAVIGATION] = LAYOUT_kc(
 //       ┌───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┐
             ___  , RESET ,  ___  ,  ___  , BRMU  , _VOLUP,                         HOME  , PGDN  , PGUP  ,  END  , BTN3  ,  ___  ,
 //       ├───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
             ___  ,  ___  ,  ___  ,  ___  , BRMD  ,_VOLDOWN,                        LEFT  , DOWN  ,  UP   , RIGHT , BTN2  ,  ___  ,
 //       ├───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
-            ___  ,  ___  ,  ___  ,  ___  ,  ___  , _MUTE ,                         MS_L  , MS_D  , MS_U  , MS_R  , BTN1  ,  ___  ,
+            ___  ,  ___  , QWERTY,COLEMAK,  ___  , _MUTE ,                         MS_L  , MS_D  , MS_U  , MS_R  , BTN1  ,  ___  ,
 //       └───────┴───────┼───────┼───────┼───────┴───────┴───────┴───────┴───────┴───────┴───────┼───────┼───────┼───────┴───────┘
                             ___  ,  ___  ,                                                          ___  ,  ___  ,
 //                       └───────┴───────┘                                                       └───────┴───────┘
