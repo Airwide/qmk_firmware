@@ -37,6 +37,7 @@ COMB(uyLbrc, KC_LBRC, KC_U, KC_Y) // Colemak
 
 COMB(klQuot, KC_QUOT, KC_K, KC_L) // Qwerty
 COMB(eiQuot, KC_QUOT, KC_E, KC_I) // Colemak
+COMB(ectlQuot, KC_QUOT, KC_E, RCTL_T(KC_I)) // Colemak
 
 // Function keys
 COMB(f1f3F2, KC_F2, KC_F1, KC_F3)
