@@ -16,6 +16,7 @@
 #define KC_ALT_X MT(MOD_LALT, KC_X)
 #define KC_ALT_DOT MT(MOD_RALT, KC_DOT)
 #define KC_CTL_SLA MT(MOD_RCTL, KC_SLSH)
+#define KC_CTL_I RCTL_T(KC_I)
 #define KC_SFT_SCN MT(MOD_RSFT, KC_SCLN)
 #define KC_SFT_O MT(MOD_RSFT, KC_O)
 #define KC_NUM_ENT LT(_NUMBER, KC_ENT)
@@ -49,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //       ┌───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┐
             ___  ,   Q   ,   W   ,   F   ,   P   ,   B   ,                           J   ,   L   ,   U   ,   Y   ,  SCLN ,  ___  ,
 //       ├───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
-            ___  , SFT_A ,   R   ,   S   ,   T   ,   G   ,                           M   ,   N   ,   E   ,   I   , SFT_O ,  ___  ,
+            ___  , SFT_A ,   R   ,   S   ,   T   ,   G   ,                           M   ,   N   ,   E   , CTL_I , SFT_O ,  ___  ,
 //       ├───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
             ___  , CTL_Z , ALT_X ,   C   ,   D   ,   V   ,                           K   ,   H   ,  COMM ,ALT_DOT,CTL_SLA,  ___  ,
 //       └───────┴───────┼───────┼───────┼───────┴───────┴───────┴───────┴───────┴───────┴───────┼───────┼───────┼───────┴───────┘
