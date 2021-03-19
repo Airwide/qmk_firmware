@@ -2,42 +2,19 @@
 
 // Left hand
 COMB(erGrv, KC_GRV, KC_E, KC_R) // Qwerty
-COMB(fpGrv, KC_GRV, KC_F, KC_P) // Colemak
-
 COMB(fgLprn, KC_LPRN, KC_F, KC_G) // Qwerty
-COMB(tgLprn, KC_LPRN, KC_T, KC_G) // Colemak
-
 COMB(rfLbrc, KC_LBRC, KC_R, KC_F) // Qwerty
-COMB(ptLbrc, KC_LBRC, KC_P, KC_T) // Colemak
-
 COMB(fvLcbr, KC_LCBR, KC_F, KC_V) // Qwerty
-COMB(tdLcbr, KC_LCBR, KC_T, KC_D) // Colemak
 
 // Right hand
 COMB(hjRprn, KC_RPRN, KC_H, KC_J) // Qwerty
-COMB(nmRprn, KC_RPRN, KC_N, KC_M) // Colemak
-
 COMB(ujRbrc, KC_RBRC, KC_U, KC_J) // Qwerty
-COMB(lnRbrc, KC_RBRC, KC_L, KC_N) // Colemak
-
 COMB(jmRcbr, KC_RCBR, KC_J, KC_M) // Qwerty
-COMB(nhRcbr, KC_RCBR, KC_N, KC_H) // Colemak
-
 COMB(uiEql, KC_EQL, KC_U, KC_I) // Qwerty
-COMB(luEql, KC_EQL, KC_L, KC_U) // Colemak
-
 COMB(jkMins, KC_MINS, KC_J, KC_K) // Qwerty
-COMB(neMins, KC_MINS, KC_N, KC_E) // Colemak
-
 COMB(mcommaBsls, KC_BSLS, KC_M, KC_COMM) // Qwerty
-COMB(hcommaBsls, KC_BSLS, KC_H, KC_COMM) // Colemak
-
 COMB(ioLbrc, KC_LBRC, KC_I, KC_O) // Qwerty
-COMB(uyLbrc, KC_LBRC, KC_U, KC_Y) // Colemak
-
 COMB(klQuot, KC_QUOT, KC_K, KC_L) // Qwerty
-COMB(eiQuot, KC_QUOT, KC_E, KC_I) // Colemak
-COMB(ectlQuot, KC_QUOT, KC_E, RCTL_T(KC_I)) // Colemak
 
 // Function keys
 COMB(f1f3F2, KC_F2, KC_F1, KC_F3)
