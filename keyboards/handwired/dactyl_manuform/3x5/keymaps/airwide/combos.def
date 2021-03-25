@@ -1,0 +1,24 @@
+// SUBS(helloWorld, "QMK is pretty rad eh?", KC_H, KC_J)
+
+// Left hand
+COMB(erGrv, KC_GRV, KC_E, KC_R) // Qwerty
+COMB(fgLprn, KC_LPRN, KC_F, KC_G) // Qwerty
+COMB(rfLbrc, KC_LBRC, KC_R, KC_F) // Qwerty
+COMB(fvLcbr, KC_LCBR, KC_F, KC_V) // Qwerty
+
+// Right hand
+COMB(hjRprn, KC_RPRN, KC_H, KC_J) // Qwerty
+COMB(ujRbrc, KC_RBRC, KC_U, KC_J) // Qwerty
+COMB(jmRcbr, KC_RCBR, KC_J, KC_M) // Qwerty
+COMB(uiEql, KC_EQL, KC_U, KC_I) // Qwerty
+COMB(jkMins, KC_MINS, KC_J, KC_K) // Qwerty
+COMB(mcommaBsls, KC_BSLS, KC_M, KC_COMM) // Qwerty
+COMB(ioLbrc, KC_LBRC, KC_I, KC_O) // Qwerty
+COMB(klQuot, KC_QUOT, KC_K, KC_L) // Qwerty
+
+// Function keys
+COMB(f1f3F2, KC_F2, KC_F1, KC_F3)
+COMB(f3f5F4, KC_F4, KC_F3, KC_F5)
+COMB(f5f7F6, KC_F6, KC_F5, KC_F7)
+COMB(f7f9F8, KC_F8, KC_F7, KC_F9)
+COMB(f10f12F11, KC_F11, KC_F10, KC_F12)
