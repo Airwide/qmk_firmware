@@ -15,16 +15,18 @@
 #define KC_SFT_A MT(MOD_LSFT, KC_A)
 #define KC_ALT_X MT(MOD_LALT, KC_X)
 #define KC_ALT_DOT MT(MOD_LALT, KC_DOT)
+#define KC_ALT_SPC MT(MOD_LALT, KC_SPC)
 #define KC_CTL_SLA MT(MOD_RCTL, KC_SLSH)
-#define KC_CTL_I RCTL_T(KC_I)
+#define KC_CTL_TAB LCTL_T(KC_TAB)
 #define KC_SFT_SCN MT(MOD_RSFT, KC_SCLN)
 #define KC_SFT_O MT(MOD_RSFT, KC_O)
-#define KC_NUM_ENT LT(_NUMBER, KC_ENT)
+#define KC_NUM_S LT(_NUMBER, KC_S)
+#define KC_NUM_R LT(_NUMBER, KC_R)
 #define KC_SYM_ESC LT(_SYMBOL, KC_ESC)
-#define KC_NAV_SPC LT(_NAVIGATION, KC_SPC)
+#define KC_NAV_ENT LT(_NAVIGATION, KC_ENT)
 #define KC_SYM_BSP LT(_SYMBOL, KC_BSPC)
-#define KC_GUI_DEL MT(MOD_LGUI,KC_DEL)
-#define KC_GUI_TAB MT(MOD_RGUI,KC_TAB)
+#define KC_GUI_DEL MT(MOD_RGUI,KC_DEL)
+#define KC_GUI_ESC MT(MOD_LGUI,KC_ESC)
 #define KC_COLEMAK DF(_COLEMAK)
 #define KC_QWERTY DF(_QWERTY)
 
@@ -33,14 +35,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //       ┌───────┬───────┬───────┬───────┬───────┬───────┐                       ┌───────┬───────┬───────┬───────┬───────┬───────┐
             XXX  ,   Q   ,   W   ,   E   ,   R   ,   T   ,                           Y   ,   U   ,   I   ,   O   ,   P   ,  XXX  ,
 //       ├───────┼───────┼───────┼───────┼───────┼───────┤                       ├───────┼───────┼───────┼───────┼───────┼───────┤
-            XXX  , SFT_A ,   S   ,   D   ,   F   ,   G   ,                           H   ,   J   ,   K   ,   L   ,SFT_SCN,  XXX  ,
+            XXX  , SFT_A , NUM_S ,   D   ,   F   ,   G   ,                           H   ,   J   ,   K   ,   L   ,SFT_SCN,  XXX  ,
 //       ├───────┼───────┼───────┼───────┼───────┼───────┤                       ├───────┼───────┼───────┼───────┼───────┼───────┤
             XXX  , CTL_Z , ALT_X ,   C   ,   V   ,   B   ,                           N   ,   M   , COMM  ,ALT_DOT,CTL_SLA,  XXX  ,
 //       └───────┴───────┼───────┼───────┼───────┴───────┘                       └───────┴───────┼───────┼───────┼───────┴───────┘
                             XXX  ,  XXX  ,                                                          XXX  ,  XXX  ,
 //                       └───────┴───────┘                                                       └───────┴───────┘
 //                                       ┌───────┬───────┬───────┐       ┌───────┬───────┬───────┐
-                                          SYM_ESC,NUM_ENT,GUI_DEL,        GUI_TAB,NAV_SPC,SYM_BSP,
+                                          CTL_TAB,ALT_SPC,GUI_ESC,        GUI_DEL,NAV_ENT,SYM_BSP,
 //                                       └───────┼───────┼───────┤       ├───────┼───────┼───────┘
                                                     NO   ,  NO   ,          NO   ,  NO  ),
 //                                               └───────┴───────┘       └───────┴───────┘
@@ -48,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //       ┌───────┬───────┬───────┬───────┬───────┬───────┐                       ┌───────┬───────┬───────┬───────┬───────┬───────┐
             ___  ,   Q   ,   W   ,   F   ,   P   ,   B   ,                           J   ,   L   ,   U   ,   Y   ,  SCLN ,  ___  ,
 //       ├───────┼───────┼───────┼───────┼───────┼───────┤                       ├───────┼───────┼───────┼───────┼───────┼───────┤
-            ___  , SFT_A ,   R   ,   S   ,   T   ,   G   ,                           M   ,   N   ,   E   , CTL_I , SFT_O ,  ___  ,
+            ___  , SFT_A , NUM_R ,   S   ,   T   ,   G   ,                           M   ,   N   ,   E   ,   I   , SFT_O ,  ___  ,
 //       ├───────┼───────┼───────┼───────┼───────┼───────┤                       ├───────┼───────┼───────┼───────┼───────┼───────┤
             ___  , CTL_Z , ALT_X ,   C   ,   D   ,   V   ,                           K   ,   H   ,  COMM ,ALT_DOT,CTL_SLA,  ___  ,
 //       └───────┴───────┼───────┼───────┼───────┴───────┘                       └───────┴───────┼───────┼───────┼───────┴───────┘
@@ -76,11 +78,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                                               └───────┴───────┘       └───────┴───────┘
 	[_NUMBER] = LAYOUT_kc(
 //       ┌───────┬───────┬───────┬───────┬───────┬───────┐                       ┌───────┬───────┬───────┬───────┬───────┬───────┐
-            ___  , PSCR  , SLCK  , NLCK  , CAPS  , PAUS  ,                         ASTR  ,   7   ,   8   ,   9   , MINS  ,  ___  ,
+            ___  ,  ___  ,  ___  ,  ___  , CAPS  , PAUS  ,                         ASTR  ,   7   ,   8   ,   9   , MINS  ,  ___  ,
 //       ├───────┼───────┼───────┼───────┼───────┼───────┤                       ├───────┼───────┼───────┼───────┼───────┼───────┤
-            ___  ,  ___  ,  ___  ,  ___  ,  ___  ,  ___  ,                         SLSH  ,   4   ,   5   ,   6   , PLUS  ,  ___  ,
+            ___  ,  ___  ,  ___  ,  ___  , NLCK  ,  INS  ,                         SLSH  ,   4   ,   5   ,   6   , PLUS  ,  ___  ,
 //       ├───────┼───────┼───────┼───────┼───────┼───────┤                       ├───────┼───────┼───────┼───────┼───────┼───────┤
-            ___  ,  ___  ,  ___  ,  INS  ,  ___  ,  ___  ,                           0   ,   1   ,   2   ,   3   ,  ENT  ,  ___  ,
+            ___  ,  ___  ,  ___  ,  ___  , PSCR  , SLCK  ,                           0   ,   1   ,   2   ,   3   ,  ENT  ,  ___  ,
 //       └───────┴───────┼───────┼───────┼───────┴───────┘                       └───────┴───────┼───────┼───────┼───────┴───────┘
                             ___  ,  ___  ,                                                          ___  ,  ___  ,
 //                       └───────┴───────┘                                                       └───────┴───────┘
