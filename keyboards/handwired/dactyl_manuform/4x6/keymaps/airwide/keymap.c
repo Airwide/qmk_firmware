@@ -7,8 +7,6 @@
 #define _NUMBER 3
 #define _NAVIGATION 4
 
-#include "g/keymap_combo.h"
-
 #define KC____ KC_TRNS
 #define KC_XXX KC_NO
 #define KC_RESET RESET
@@ -30,6 +28,8 @@
 #define KC_GUI_ESC MT(MOD_LGUI,KC_ESC)
 #define KC_COLEMAK DF(_COLEMAK)
 #define KC_QWERTY DF(_QWERTY)
+
+#include "g/keymap_combo.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_QWERTY] = LAYOUT_kc(

@@ -5,7 +5,7 @@ COMB(erGrv, KC_GRV, KC_E, KC_R) // Qwerty
 COMB(fgLprn, KC_LPRN, KC_F, KC_G) // Qwerty
 COMB(rfLbrc, KC_LBRC, KC_R, KC_F) // Qwerty
 COMB(fvLcbr, KC_LCBR, KC_F, KC_V) // Qwerty
-COMB(asEsc, KC_ESC, MT(MOD_LSFT, KC_A), LT(_NUMBER, KC_S)) // Qwerty
+COMB(asEsc, KC_ESC, KC_SFT_A, KC_NUM_S) // Qwerty
 
 // Right hand
 COMB(hjRprn, KC_RPRN, KC_H, KC_J) // Qwerty
