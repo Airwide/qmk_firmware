@@ -1,12 +1,13 @@
 #include QMK_KEYBOARD_H
 #include "4x6.h"
-#include "g/keymap_combo.h"
 
 #define _QWERTY 0
 #define _COLEMAK 1
 #define _SYMBOL 2
 #define _NUMBER 3
 #define _NAVIGATION 4
+
+#include "g/keymap_combo.h"
 
 #define KC____ KC_TRNS
 #define KC_XXX KC_NO
