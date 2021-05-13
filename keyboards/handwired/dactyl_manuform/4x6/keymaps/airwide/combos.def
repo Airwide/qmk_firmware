@@ -15,4 +15,4 @@ COMB(uiEql, KC_EQL, KC_U, KC_I) // Qwerty
 COMB(jkMins, KC_MINS, KC_J, KC_K) // Qwerty
 COMB(mcommaBsls, KC_BSLS, KC_M, KC_COMM) // Qwerty
 COMB(ioLbrc, KC_LBRC, KC_I, KC_O) // Qwerty
-COMB(klQuot, KC_QUOT, KC_K, KC_L) // Qwerty
+COMB(klQuot, KC_QUOT, KC_K, KC_FUN_L) // Qwerty
