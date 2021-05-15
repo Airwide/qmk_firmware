@@ -76,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                                     └─────┴─────┘       └─────┴─────┘
 */
 	[_COLEMAK] = LAYOUT(
-            _____  ,   KC_Q   ,   KC_W   ,   KC_F   ,   KC_P   ,   KC_B   ,                           KC_J   ,   KC_L   ,   KC_U   ,   KC_Y   ,  KC_SCLN ,  _____  ,
+            _____  ,   KC_Q   ,   KC_W   ,   KC_F   ,   KC_P   ,   KC_B   ,                KC_J   ,   KC_L   ,   KC_U   ,   KC_Y   ,  KC_SCLN ,  _____  ,
             _____  , SFT_A , NUM_R ,   KC_S   ,   KC_T   ,   KC_G   ,                           KC_M   ,   KC_N   ,   KC_E   , FUN_I , SFT_O ,  _____  ,
             _____  , CTL_Z , ALT_X ,   KC_C   ,   KC_D   ,   KC_V   ,                           KC_K   ,   KC_H   ,  KC_COMM ,ALT_DOT,CTL_SLA,  _____  ,
                             _____  ,  _____  ,                                                          _____  ,  _____  ,
@@ -84,11 +84,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     _____  ,  _____  ,          _____  ,  _____ ),
 /* Symbols
 //       ┌─────┬─────┬─────┬─────┬─────┬─────┐                   ┌─────┬─────┬─────┬─────┬─────┬─────┐
-         |     |     |     |     |     |     |                   |     |     |     |     |     |     |
+         |     |  !  |  "  |  #  |  €  |  §  |                   |     |  /  |  \  |  |  |  =  |     |
 //       ├─────┼─────┼─────┼─────┼─────┼─────┤                   ├─────┼─────┼─────┼─────┼─────┼─────┤
-         |     |  !  |  @  |  #  |  $  |  %  |                   |  ^  |  &  |  *  |  (  |  )  |     |
+         |     |  '  |  {  |  [  |  (  |  %  |                   |  &  |  )  |  ]  |  }  |  +  |     |
 //       ├─────┼─────┼─────┼─────┼─────┼─────┤                   ├─────┼─────┼─────┼─────┼─────┼─────┤
-         |     |     |     |     |     |     |                   |  '  |  [  |  ]  |     |     |     |
+         |     |  ~  |  @  |  £  |  $  |  ´  |                   |  ¨  |  ?  |  <  |  >  |  *  |     |
 //       └─────┴─────┼─────┼─────┼─────┴─────┘                   └─────┴─────┼─────┼─────┼─────┴─────┘
                      |     |     |                                           |     |     |
 //                   └─────┴─────┘                                           └─────┴─────┘
@@ -99,12 +99,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                                     └─────┴─────┘       └─────┴─────┘
 */
 	[_SYMBOL] = LAYOUT(
-            _____  ,  _____  ,  _____  ,  _____  ,  _____  ,  _____  ,                          _____  ,  _____  ,  _____  ,  _____  ,  _____  ,  _____  ,
-            _____  , KC_EXLM  ,  KC_AT   , KC_HASH  ,  KC_DLR  , KC_PERC  ,                         KC_CIRC  , KC_AMPR  , KC_ASTR  , KC_LPRN  , KC_RPRN  ,  _____  ,
-            _____  ,  _____  ,  _____  ,  _____  ,  _____  ,  _____  ,                         KC_QUOT  , KC_LBRC  , KC_RBRC  ,  _____  ,  _____  ,  _____  ,
-                            _____  ,  _____  ,                                                          _____  ,  _____  ,
-                                            _____  ,  _____  ,  _____  ,          _____  ,  _____  , _____  ,
-                                                    _____  ,  _____  ,          _____  ,  _____ ),
+			   _____, SE_EXLM, SE_DQUO, SE_HASH, SE_CURR, SE_LABK,            _____, SE_SLSH, SE_BSLS_MAC, SE_PIPE_MAC, SE_EQL, _____,
+			   _____, SE_QUOT, SE_LCBR_MAC, SE_LBRC, SE_LPRN, SE_PERC,            SE_AMPR, SE_RPRN, SE_RBRC, SE_RCBR_MAC, SE_PLUS, _____,
+			   _____, SE_TILD, SE_AT, SE_PND, SE_DLR, SE_ACUT,                SE_DIAE, SE_QUES, SE_LESS_MAC, SE_GRTR_MAC, SE_ASTR, _____,
+                                           _____, _____,                                                    _____, _____,
+                                                         _____, _____, _____,           _____, _____, _____,
+                                                                _____, _____,           _____, _____),
 /* Numbers
 //       ┌─────┬─────┬─────┬─────┬─────┬─────┐                   ┌─────┬─────┬─────┬─────┬─────┬─────┐
          |     |     |     |     |CapLk|Pause|                   |  *  |  7  |  8  |  9  |  -  |     |
@@ -122,9 +122,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                                     └─────┴─────┘       └─────┴─────┘
 */
 	[_NUMBER] = LAYOUT(
-            _____  ,  _____  ,  _____  ,  _____  , KC_CAPS  , KC_PAUS  ,                         KC_ASTR  ,   KC_7   ,   KC_8   ,   KC_9   , KC_MINS  ,  _____  ,
-            _____  ,  _____  ,  _____  ,  _____  , KC_NLCK  ,  KC_INS  ,                         KC_SLSH  ,   KC_4   ,   KC_5   ,   KC_6   , KC_PLUS  ,  _____  ,
-            _____  ,  _____  ,  _____  ,  _____  , KC_PSCR  , KC_SLCK  ,                           KC_0   ,   KC_1   ,   KC_2   ,   KC_3   ,  KC_ENT  ,  _____  ,
+            _____  ,  _____  ,  _____  ,  _____  , KC_CAPS  , KC_PAUS  ,                   KC_ASTR  ,   KC_7   ,   KC_8   ,   KC_9   , KC_MINS  ,  _____  ,
+            _____  ,  _____  ,  _____  ,  _____  , KC_NLCK  ,  KC_INS  ,                   KC_SLSH  ,   KC_4   ,   KC_5   ,   KC_6   , KC_PLUS  ,  _____  ,
+            _____  ,  _____  ,  _____  ,  _____  , KC_PSCR  , KC_SLCK  ,                   KC_0   ,   KC_1   ,   KC_2   ,   KC_3   ,  KC_ENT  ,  _____  ,
                             _____  ,  _____  ,                                                          _____  ,  _____  ,
                                             _____  ,  _____  ,  _____  ,          _____  ,  _____  ,   KC_0   ,
                                                     _____  ,  _____  ,          _____  ,  _____ ),
@@ -145,9 +145,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                                     └─────┴─────┘       └─────┴─────┘
 */
 	[_NAVIGATION] = LAYOUT(
-            _____  , RESET ,  _____  ,  _____  , KC_BRMU  , KC__VOLUP,                         KC_HOME  , KC_PGDN  , KC_PGUP  ,  KC_END  , KC_BTN3  ,  _____  ,
-            _____  ,  _____  ,  _____  ,  _____  , KC_BRMD  ,KC__VOLDOWN,                         KC_LEFT  , KC_DOWN  ,  KC_UP   , KC_RIGHT , KC_BTN2  ,  _____  ,
-            _____  ,  _____  , QWERTY,COLEMAK,  _____  , KC__MUTE ,                         KC_MS_L  , KC_MS_D  , KC_MS_U  , KC_MS_R  , KC_BTN1  ,  _____  ,
+            _____  , RESET ,  _____  ,  _____  , KC_BRMU  , KC__VOLUP,                     KC_HOME  , KC_PGDN  , KC_PGUP  ,  KC_END  , KC_BTN3  ,  _____  ,
+            _____  ,  _____  ,  _____  ,  _____  , KC_BRMD  ,KC__VOLDOWN,                  KC_LEFT  , KC_DOWN  ,  KC_UP   , KC_RIGHT , KC_BTN2  ,  _____  ,
+            _____  ,  _____  , QWERTY,COLEMAK,  _____  , KC__MUTE ,                        KC_MS_L  , KC_MS_D  , KC_MS_U  , KC_MS_R  , KC_BTN1  ,  _____  ,
                             _____  ,  _____  ,                                                          _____  ,  _____  ,
                                             _____  ,  _____  ,  _____  ,          _____  ,  _____  ,  _____  ,
 	                                            _____  ,  _____  ,          _____  ,  _____ ),
@@ -168,9 +168,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                                     └─────┴─────┘       └─────┴─────┘
 */
 	[_FUNCTION] = LAYOUT(
-            _____  ,  KC_F1   ,  KC_F2   ,  KC_F3   ,  KC_F4   ,  KC_F5   ,                          _____  ,  _____  ,  _____  ,  _____  ,  _____  ,  _____  ,
-            _____  ,  KC_F6   ,  KC_F7   ,  KC_F8   ,  KC_F9   ,  KC_F10  ,                          _____  ,  _____  ,  _____  ,  _____  ,  _____  ,  _____  ,
-            _____  ,  KC_F11  ,  KC_F12  ,  _____  ,  _____  ,  _____  ,                          _____  ,  _____  ,  _____  ,  _____  ,  _____  ,  _____  ,
+            _____  ,  KC_F1   ,  KC_F2   ,  KC_F3   ,  KC_F4   ,  KC_F5   ,                _____  ,  _____  ,  _____  ,  _____  ,  _____  ,  _____  ,
+            _____  ,  KC_F6   ,  KC_F7   ,  KC_F8   ,  KC_F9   ,  KC_F10  ,                _____  ,  _____  ,  _____  ,  _____  ,  _____  ,  _____  ,
+            _____  ,  KC_F11  ,  KC_F12  ,  _____  ,  _____  ,  _____  ,                   _____  ,  _____  ,  _____  ,  _____  ,  _____  ,  _____  ,
                             _____  ,  _____  ,                                                          _____  ,  _____  ,
                                             _____  ,  _____  ,  _____  ,          _____  ,  _____  , _____  ,
                                                     _____  ,  _____  ,          _____  ,  _____ )
