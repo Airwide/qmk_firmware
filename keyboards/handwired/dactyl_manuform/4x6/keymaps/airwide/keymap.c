@@ -2,8 +2,8 @@
 #include "4x6.h"
 #include "keymap_swedish.h"
 
-#define _QWERTY 0
-#define _COLEMAK 1
+#define _COLEMAK 0
+#define _QWERTY 1
 #define _SYMBOL 2
 #define _NUMBER 3
 #define _NAVIGATION 4
@@ -36,29 +36,6 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   
-/* QWERTY
-//       ┌─────┬─────┬─────┬─────┬─────┬─────┐                   ┌─────┬─────┬─────┬─────┬─────┬─────┐
-         |     |  q  |  w  |  e  |  r  |  t  |                   |  y  |  u  |  i  |  o  |  p  |     |
-//       ├─────┼─────┼─────┼─────┼─────┼─────┤                   ├─────┼─────┼─────┼─────┼─────┼─────┤
-         |     |sft-a|num-s|  d  |  f  |  g  |                   |  h  |  j  |  k  |fun-l|sft-;|     |
-//       ├─────┼─────┼─────┼─────┼─────┼─────┤                   ├─────┼─────┼─────┼─────┼─────┼─────┤
-         |     |ctl-z|alt-x|  c  |  v  |  b  |                   |  n  |  m  |  ,  |alt-.|ctl-/|     |
-//       └─────┴─────┼─────┼─────┼─────┴─────┘                   └─────┴─────┼─────┼─────┼─────┴─────┘
-                     |     |     |                                           |     |     |
-//                   └─────┴─────┘                                           └─────┴─────┘
-//                               ┌─────┬─────┬─────┐       ┌─────┬─────┬─────┐
-                                 |c-tab|a-spc|g-esc|       |g-del|na-en|sy-bs|
-//                               └─────┼─────┼─────┤       ├─────┼─────┼─────┘
-                                       |     |     |       |     |     |
-//                                     └─────┴─────┘       └─────┴─────┘
-*/
-	[_QWERTY] = LAYOUT(
-            XXXXX, KC_Q,  KC_W,  KC_E,  KC_R, KC_T,                            KC_Y, KC_U, KC_I,    KC_O,    KC_P,    XXXXX,
-            XXXXX, SFT_A, NUM_S, KC_D,  KC_F, KC_G,                            KC_H, KC_J, KC_K,    FUN_L,   SFT_SCN, XXXXX,
-            XXXXX, CTL_Z, ALT_X, KC_C,  KC_V, KC_B,                            KC_N, KC_M, KC_COMM, ALT_DOT, CTL_SLA, XXXXX,
-                          XXXXX, XXXXX,                                                    XXXXX,   XXXXX,
-                                    CTL_TAB, ALT_SPC, GUI_ESC,      GUI_DEL, NAV_ENT, SYM_BSP,
-                                             XXXXX,   XXXXX,        XXXXX,   XXXXX),
 /* Colemak DHm
 //       ┌─────┬─────┬─────┬─────┬─────┬─────┐                   ┌─────┬─────┬─────┬─────┬─────┬─────┐
          |     |  q  |  w  |  f  |  p  |  b  |                   |  j  |  l  |  u  |  y  |  ;  |     |
@@ -70,16 +47,39 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                      |     |     |                                           |     |     |
 //                   └─────┴─────┘                                           └─────┴─────┘
 //                               ┌─────┬─────┬─────┐       ┌─────┬─────┬─────┐
-                                 |     |     |     |       |     |     |     |
+                                 |c-tab|a-spc|g-esc|       |g-del|na-en|sy-bs|
 //                               └─────┼─────┼─────┤       ├─────┼─────┼─────┘
                                        |     |     |       |     |     |
 //                                     └─────┴─────┘       └─────┴─────┘
 */
 	[_COLEMAK] = LAYOUT(
-            _____, KC_Q,  KC_W,  KC_F,  KC_P,  KC_B,                         KC_J, KC_L, KC_U,    KC_Y,    KC_SCLN, _____,
-            _____, SFT_A, NUM_R, KC_S,  KC_T,  KC_G,                         KC_M, KC_N, KC_E,    FUN_I,   SFT_O,   _____,
-            _____, CTL_Z, ALT_X, KC_C,  KC_D,  KC_V,                         KC_K, KC_H, KC_COMM, ALT_DOT, CTL_SLA, _____,
-                          _____, _____,                                                  _____,   _____,
+	    XXXXX, KC_Q,  KC_W,  KC_F,  KC_P,  KC_B,                         KC_J, KC_L, KC_U,    KC_Y,    KC_SCLN, XXXXX,
+	    XXXXX, SFT_A, NUM_R, KC_S,  KC_T,  KC_G,                         KC_M, KC_N, KC_E,    FUN_I,   SFT_O,   XXXXX,
+	    XXXXX, CTL_Z, ALT_X, KC_C,  KC_D,  KC_V,                         KC_K, KC_H, KC_COMM, ALT_DOT, CTL_SLA, XXXXX,
+                          XXXXX, XXXXX,                                                  XXXXX,   XXXXX,
+                                    CTL_TAB, ALT_SPC, GUI_ESC,      GUI_DEL, NAV_ENT, SYM_BSP,
+                                             XXXXX,   XXXXX,        XXXXX,   XXXXX),
+/* QWERTY
+//       ┌─────┬─────┬─────┬─────┬─────┬─────┐                   ┌─────┬─────┬─────┬─────┬─────┬─────┐
+         |     |  q  |  w  |  e  |  r  |  t  |                   |  y  |  u  |  i  |  o  |  p  |     |
+//       ├─────┼─────┼─────┼─────┼─────┼─────┤                   ├─────┼─────┼─────┼─────┼─────┼─────┤
+         |     |sft-a|num-s|  d  |  f  |  g  |                   |  h  |  j  |  k  |fun-l|sft-;|     |
+//       ├─────┼─────┼─────┼─────┼─────┼─────┤                   ├─────┼─────┼─────┼─────┼─────┼─────┤
+         |     |ctl-z|alt-x|  c  |  v  |  b  |                   |  n  |  m  |  ,  |alt-.|ctl-/|     |
+//       └─────┴─────┼─────┼─────┼─────┴─────┘                   └─────┴─────┼─────┼─────┼─────┴─────┘
+                     |     |     |                                           |     |     |
+//                   └─────┴─────┘                                           └─────┴─────┘
+//                               ┌─────┬─────┬─────┐       ┌─────┬─────┬─────┐
+                                 |     |     |     |       |     |     |     |
+//                               └─────┼─────┼─────┤       ├─────┼─────┼─────┘
+                                       |     |     |       |     |     |
+//                                     └─────┴─────┘       └─────┴─────┘
+*/
+	[_QWERTY] = LAYOUT(
+            _____, KC_Q,  KC_W,  KC_E,  KC_R, KC_T,                            KC_Y, KC_U, KC_I,    KC_O,    KC_P,    _____,
+            _____, SFT_A, NUM_S, KC_D,  KC_F, KC_G,                            KC_H, KC_J, KC_K,    FUN_L,   SFT_SCN, _____,
+            _____, CTL_Z, ALT_X, KC_C,  KC_V, KC_B,                            KC_N, KC_M, KC_COMM, ALT_DOT, CTL_SLA, _____,
+	                  _____, _____,                                                    _____,   _____,
                                         _____, _____, _____,       _____,  _____, _____,
                                                _____, _____,       _____,  _____ ),
 /* Symbols
