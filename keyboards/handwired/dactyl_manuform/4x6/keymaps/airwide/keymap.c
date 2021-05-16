@@ -16,7 +16,7 @@
 #define ALT_X MT(MOD_LALT, KC_X)
 #define ALT_DOT MT(MOD_LALT, KC_DOT)
 #define ALT_SPC MT(MOD_LALT, KC_SPC)
-#define CTL_SLA MT(MOD_RCTL, KC_SLSH)
+#define CTL_MIN MT(MOD_RCTL, SE_MINS)
 #define CTL_TAB LCTL_T(KC_TAB)
 #define SFT_SCN MT(MOD_RSFT, KC_SCLN)
 #define SFT_O MT(MOD_RSFT, KC_O)
@@ -53,9 +53,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                                     └─────┴─────┘       └─────┴─────┘
 */
 	[_COLEMAK] = LAYOUT(
-	    XXXXX, KC_Q,  KC_W,  KC_F,  KC_P,  KC_B,                         KC_J, KC_L, KC_U,    KC_Y,    KC_SCLN, XXXXX,
+	    XXXXX, KC_Q,  KC_W,  KC_F,  KC_P,  KC_B,                         KC_J, KC_L, KC_U,    KC_Y,    SE_ODIA, XXXXX,
 	    XXXXX, SFT_A, NUM_R, KC_S,  KC_T,  KC_G,                         KC_M, KC_N, KC_E,    FUN_I,   SFT_O,   XXXXX,
-	    XXXXX, CTL_Z, ALT_X, KC_C,  KC_D,  KC_V,                         KC_K, KC_H, KC_COMM, ALT_DOT, CTL_SLA, XXXXX,
+	    XXXXX, CTL_Z, ALT_X, KC_C,  KC_D,  KC_V,                         KC_K, KC_H, KC_COMM, ALT_DOT, CTL_MIN, XXXXX,
                           XXXXX, XXXXX,                                                  XXXXX,   XXXXX,
                                     CTL_TAB, ALT_SPC, GUI_ESC,      GUI_DEL, NAV_ENT, SYM_BSP,
                                              XXXXX,   XXXXX,        XXXXX,   XXXXX),
@@ -78,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_QWERTY] = LAYOUT(
             _____, KC_Q,  KC_W,  KC_E,  KC_R, KC_T,                            KC_Y, KC_U, KC_I,    KC_O,    KC_P,    _____,
             _____, SFT_A, NUM_S, KC_D,  KC_F, KC_G,                            KC_H, KC_J, KC_K,    FUN_L,   SFT_SCN, _____,
-            _____, CTL_Z, ALT_X, KC_C,  KC_V, KC_B,                            KC_N, KC_M, KC_COMM, ALT_DOT, CTL_SLA, _____,
+            _____, CTL_Z, ALT_X, KC_C,  KC_V, KC_B,                            KC_N, KC_M, KC_COMM, ALT_DOT, CTL_MIN, _____,
 	                  _____, _____,                                                    _____,   _____,
                                         _____, _____, _____,       _____,  _____, _____,
                                                _____, _____,       _____,  _____ ),
